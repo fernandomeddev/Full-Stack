@@ -16,6 +16,10 @@ module.exports = (sequielize, DataTypes) =>{
         },
     });
 
+    Tasks.associate = (models) =>{
+        Tasks.hasMany(models.Comments, {
+            onDelete:"cascade"
+        })
+    }
     return Tasks;
-
 };
